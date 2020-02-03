@@ -22,4 +22,8 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  # database: db/production.sqlite3
+  database: blogy_production
+  username: root
+  password: <%= ENV.fetch("MYSQL_ROOT_PASSWORD") %>
+  host: <%= ENV.fetch("MYSQL_HOST") %>
